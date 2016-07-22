@@ -27,4 +27,7 @@ public class PrimeFactorsTest extends TestCase {
     public void testEight() {
         assertEquals(list(2, 2, 2), PrimeFactors.generate(8));
     }
+    public void testNine() {
+        assertEquals(list(3, 3), PrimeFactors.generate(9));
+    }
 }
