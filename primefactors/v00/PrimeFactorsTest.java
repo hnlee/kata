@@ -30,4 +30,11 @@ public class PrimeFactorsTest extends TestCase {
     public void testNine() {
         assertEquals(list(3, 3), PrimeFactors.generate(9));
     }
+    public void testLargePrime() {
+        assertEquals(list(15485863), PrimeFactors.generate(15485863));
+    }
+    public void testProductofLargePrimes() {
+        assertEquals(list(9929, 10039), 
+                     PrimeFactors.generate(9929 * 10039));
+    }
 }
