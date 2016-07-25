@@ -5,10 +5,11 @@ class PrimeFactors {
         ArrayList<Integer> primes = new ArrayList<Integer>();
         int candidate = 2;
         while (number > 1) {
-            if (number % candidate == 0) {
+            while (number % candidate == 0) {
                 primes.add(candidate);
                 number /= candidate;
             }
+            candidate++;
         }
         return primes;
     }
