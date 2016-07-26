@@ -23,12 +23,17 @@ public class PrimeFactorsTest {
     }
 
     @Test
-    public void testThree() {
+    public void testFour() {
         assertEquals(list(2, 2), PrimeFactors.generate(4));
     }
 
     @Test
-    public void testFour() {
+    public void testSix() {
         assertEquals(list(2, 3), PrimeFactors.generate(6));
+    }
+
+    @Test
+    public void testEight() {
+        assertEquals(list(2, 2, 2), PrimeFactors.generate(8));
     }
 }
