@@ -6,8 +6,11 @@ public class PrimeFactors {
         ArrayList<Integer> primes = new ArrayList<Integer>();
         int factor = 2;
         while (number > 1) {
-            primes.add(factor);
-            number /= factor;
+            while (number % factor == 0) {
+                primes.add(factor);
+                number /= factor;
+            }
+            factor++; 
         }
         return primes;
     }   
