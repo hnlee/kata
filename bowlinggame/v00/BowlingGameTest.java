@@ -16,6 +16,10 @@ public class BowlingGameTest {
         }
     }
 
+    private void rollStrike() {
+        g.roll(10);
+    }
+
     private void rollSpare() {
         g.roll(5);
         g.roll(5);
@@ -43,7 +47,7 @@ public class BowlingGameTest {
  
     @Test
     public void testOneStrike() throws Exception {
-        g.roll(10);
+        rollStrike();
         g.roll(3);
         g.roll(4);
         rollMany(16, 0);
