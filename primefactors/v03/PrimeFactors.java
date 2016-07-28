@@ -12,9 +12,6 @@ public class PrimeFactors {
             }
             prime++;
         }
-        if (number > 1) {
-            primes.add(number);
-        }
         return primes;
     }
 
