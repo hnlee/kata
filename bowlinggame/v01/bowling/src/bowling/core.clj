@@ -2,10 +2,13 @@
   (:gen-class))
 
 (defn start-game [game]
-  (def game []))
+  (let [game []]
+  game))
 
 (defn roll [game pins]
-  )
-
+  (conj game pins))
+  
 (defn score [game]
-  0) 
+  (reduce
+    (fn [x, y] (+ x y))
+    game)) 
