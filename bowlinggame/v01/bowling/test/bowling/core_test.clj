@@ -1,7 +1,7 @@
 (ns bowling.core-test
   (:require [clojure.test :refer :all]
-            [bowling.core :refer :all]))
+            [bowling.core :as bowling :refer :all]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(deftest bowling-test 
+  (testing "Start a game"
+    (is (not (nil? game)))))
