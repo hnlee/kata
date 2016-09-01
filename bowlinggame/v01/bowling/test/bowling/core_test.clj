@@ -29,3 +29,9 @@
     (is (= 16
       (score (roll-multiples (start-game :g)
         (concat [5 5 3] (repeat 17 0))))))))
+
+(deftest test-one-strike
+  (testing "Roll a game with one strike"
+    (is (= 24
+      (score (roll-multiples (start-game :g)
+        (concat [10 3 4] (repeat 16 0))))))))
