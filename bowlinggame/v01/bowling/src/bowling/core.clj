@@ -1,4 +1,11 @@
 (ns bowling.core
   (:gen-class))
 
-(def game [])
+(defn start-game [game]
+  (def game []))
+
+(defn roll [game pins]
+  )
+
+(defn score [game]
+  0) 
