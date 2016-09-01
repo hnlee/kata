@@ -24,4 +24,8 @@
       (score (roll-multiples (start-game :g) 
         (repeat 20 1)))))))
 
-        
+(deftest test-one-spare
+  (testing "Roll a game with one spare"
+    (is (= 16
+      (score (roll-multiples (start-game :g)
+        (concat [5 5 3] (repeat 17 0))))))))
