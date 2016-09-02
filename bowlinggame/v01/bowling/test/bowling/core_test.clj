@@ -2,7 +2,7 @@
   (:require [clojure.test :refer :all]
             [bowling.core :refer :all]))
 
-(deftest test-start-game 
+(deftest test-start-game
   (testing "Start a game"
     (is (not (nil? (start-game :g))))))
 
@@ -14,14 +14,14 @@
 
 (deftest test-gutter-game
   (testing "Roll games with only zeros"
-    (is (= 0 
-      (score (roll-multiples (start-game :g) 
+    (is (= 0
+      (score (roll-multiples (start-game :g)
         (repeat 20 0)))))))
 
 (deftest test-all-ones
   (testing "Roll a game with only ones"
-    (is (= 20 
-      (score (roll-multiples (start-game :g) 
+    (is (= 20
+      (score (roll-multiples (start-game :g)
         (repeat 20 1)))))))
 
 (deftest test-one-spare

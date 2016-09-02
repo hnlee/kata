@@ -7,7 +7,7 @@
 
 (defn roll [game pins]
   (conj game pins))
-  
+
 (defn strike? [frame]
   (= 10 frame))
 
@@ -16,7 +16,7 @@
 
 (defn score [game]
   (loop [points 0 acc game frame 0]
-    (cond 
+    (cond
       (= 10 frame)
         points
       (strike? (first acc))
@@ -27,7 +27,7 @@
         (recur (+ points 10 (nth acc 2))
                (nthrest acc 2)
                (inc frame))
-      :else 
+      :else
         (recur (+ points (first acc) (second acc))
                (nthrest acc 2)
                (inc frame)))))
