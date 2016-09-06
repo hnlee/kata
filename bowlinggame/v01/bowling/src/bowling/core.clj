@@ -1,7 +1,7 @@
 (ns bowling.core)
 
 (defn roll 
-  ([game pins] (conj game pins))
+  ([game & pins] (apply conj game pins))
   ([pins] [pins]))
   
 (defn strike? [frame]
