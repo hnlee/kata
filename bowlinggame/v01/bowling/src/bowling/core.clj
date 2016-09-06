@@ -4,25 +4,25 @@
   ([game & pins] (apply conj game pins))
   ([pins] [pins]))
   
-(defn strike? [frame]
-  (= 10 frame))
+(defn strike? [rolls]
+  (= 10 (first rolls)))
 
-(defn spare? [frame-one frame-two]
-  (= 10 (+ frame-one frame-two)))
+(defn spare? [rolls]
+  (= 10 (+ (first rolls) (second rolls))))
 
 (defn score [game]
-  (loop [points 0 acc game frame 0]
+  (loop [points 0 rolls game frame 0]
     (cond 
       (= 10 frame) points
-      (strike? (first acc)) (recur 
-        (+ points 10 (second acc) (nth acc 2))
-        (rest acc)
+      (strike? rolls) (recur 
+        (apply + points (take 3 rolls))
+        (rest rolls)
         (inc frame))
-      (spare? (first acc) (second acc)) (recur 
-        (+ points 10 (nth acc 2))
-        (nthrest acc 2)
+      (spare? rolls) (recur 
+        (apply + points (take 3 rolls)) 
+        (nthrest rolls 2)
         (inc frame))
       :else (recur 
-        (+ points (first acc) (second acc))
-        (nthrest acc 2)
+        (apply + points (take 2 rolls)) 
+        (nthrest rolls 2)
         (inc frame)))))

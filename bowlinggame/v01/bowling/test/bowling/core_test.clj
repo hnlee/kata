@@ -12,6 +12,11 @@
     (is (= [0 0]
       (roll [0] 0)))))
 
+(deftest test-adding-multiple-rolls
+  (testing "Add multiple rolls to a game"
+    (is (= [0 0 0]
+      (roll [0] 0 0)))))
+
 (deftest test-gutter-game
   (testing "Roll games with only zeros"
     (is (= 0 
@@ -25,12 +30,12 @@
 (deftest test-spare
   (testing "Detect if frame is a spare"
     (is (= true
-      (spare? 5 5)))))
+      (spare? [5 5])))))
       
 (deftest test-strike
   (testing "Detect if frame is a strike"
     (is (= true
-      (strike? 10)))))
+      (strike? [10])))))
 
 (deftest test-one-spare
   (testing "Roll a game with one spare"
@@ -46,4 +51,3 @@
   (testing "Roll a perfect game of all strikes"
     (is (= 300
       (score (apply roll [] (repeat 12 10)))))))
-        
