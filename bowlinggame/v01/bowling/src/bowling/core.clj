@@ -1,6 +1,7 @@
 (ns bowling.core)
 
 (defn roll 
+  "Add rolls to existing game or start new game with first roll"
   ([game & pins] (apply conj game pins))
   ([pins] [pins]))
   
