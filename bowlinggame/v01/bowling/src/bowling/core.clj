@@ -1,12 +1,8 @@
-(ns bowling.core
-  (:gen-class))
+(ns bowling.core)
 
-(defn start-game [game]
-  (let [game []]
-  game))
-
-(defn roll [game pins]
-  (conj game pins))
+(defn roll 
+  ([game pins] (conj game pins))
+  ([pins] [pins]))
   
 (defn strike? [frame]
   (= 10 frame))
